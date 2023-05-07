@@ -14,7 +14,7 @@ public interface PaymentHistoryRepository extends PagingAndSortingRepository<Pay
     public PaymentHistory getById(@Param("id") Long id);
 
     @Query("select p from PaymentHistory p WHERE p.pembayaranKe = :pembayaranKe")
-    Page<PaymentHistory> getByPembayaranKe(Integer pembayaranke, Pageable pageable);
+    Page<PaymentHistory> getByPembayaranKe(Integer pembayaranKe, Pageable pageable);
 
     @Query("select p from PaymentHistory p")
     Page<PaymentHistory> getAllData(Pageable pageable);
