@@ -23,18 +23,21 @@ public class TransaksiController {
     @Autowired
     public TransaksiRepository transaksiRepository;
 
+    // done
     @PostMapping("")
     public ResponseEntity<Map> save(@RequestBody Transaksi objModel) {
         Map save = transaksiService.save(objModel);
         return new ResponseEntity<Map>(save, HttpStatus.OK);
     }
 
+    // done
     @PutMapping("")
     public ResponseEntity<Map> updateStatus(@RequestBody Transaksi objModel) {
         Map update = transaksiService.updateStatus(objModel);
         return new ResponseEntity<Map>(update, HttpStatus.OK);
     }
 
+    // done
     @GetMapping("/list")
     public ResponseEntity<Map> list(
             @RequestParam() Integer page,
@@ -43,10 +46,10 @@ public class TransaksiController {
     ) {
         Pageable show_data = PageRequest.of(page, size);
         Page<Transaksi> list = null;
-        if (status != null) transaksiRepository.getByStatus(status, show_data);
-        else transaksiRepository.getAllData(show_data);
+        if (status != null) list = transaksiRepository.getByStatus(status, show_data);
+        else list = transaksiRepository.getAllData(show_data);
 
-        Map map = new HashMap();
+        Map<String, Object> map = new HashMap<String, Object>();
         map.put("data",list);
         map.put("code","200");
         map.put("status","success");
