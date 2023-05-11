@@ -25,7 +25,7 @@ import javax.annotation.Priority;
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
-    @Value("${security.bcrypt.cost:13}  ")
+    @Value("${security.bcrypt.cost:13}")
     private int cost;
 
     @Value("${security.jwt.enabled:false}")
