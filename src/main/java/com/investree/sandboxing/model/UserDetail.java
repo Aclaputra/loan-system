@@ -1,6 +1,8 @@
 package com.investree.sandboxing.model;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
+
+import com.investree.sandboxing.model.oauth.User;
 import lombok.Data;
 
 @Data

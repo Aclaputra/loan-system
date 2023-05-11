@@ -1,10 +1,9 @@
 package com.investree.sandboxing.model;
 
-import jakarta.persistence.*;
-import lombok.Data;
-import com.investree.sandboxing.model.User;
+import javax.persistence.*;
 
-import java.util.Set;
+import com.investree.sandboxing.model.oauth.User;
+import lombok.Data;
 
 @Data
 @Entity

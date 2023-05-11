@@ -1,6 +1,6 @@
 package com.investree.sandboxing.repository;
 
-import com.investree.sandboxing.model.User;
+import com.investree.sandboxing.model.oauth.User;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
