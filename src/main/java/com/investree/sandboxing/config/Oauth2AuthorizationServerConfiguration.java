@@ -59,3 +59,4 @@ public class Oauth2AuthorizationServerConfiguration extends AuthorizationServerC
     }
 
 }
+
