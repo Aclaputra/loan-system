@@ -49,7 +49,9 @@ public class Oauth2ResourceServerConfiguration extends ResourceServerConfigurerA
          .disable()
          .antMatcher("/**")
          .authorizeRequests()
-         .antMatchers("/",  "/oauth/authorize**", "/ar/**", "/api/ar/**", "/login**", "/error**")
+         .antMatchers("/",  "/oauth/authorize**", "/ar/**", "/api/ar/**", "/login**", "/error**"
+                 , "/swagger-ui/**","/swagger-ui.html**", "/v3/api-docs/**", "/configuration/ui**",
+                 "/swagger-resources/**","/configuration/security**", "/webjars/**" )
          .permitAll()
          .and()
          .authorizeRequests()
@@ -59,6 +61,7 @@ public class Oauth2ResourceServerConfiguration extends ResourceServerConfigurerA
          //                    .formLogin()
          //                    .permitAll()
          ;
+
 
          //        http.requestMatchers()
          //                .antMatchers("/api/v1/**")
@@ -76,4 +79,5 @@ public class Oauth2ResourceServerConfiguration extends ResourceServerConfigurerA
          //        ;
 
     }
+
 }

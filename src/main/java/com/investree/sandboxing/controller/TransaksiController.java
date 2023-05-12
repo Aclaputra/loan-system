@@ -3,6 +3,8 @@ package com.investree.sandboxing.controller;
 import com.investree.sandboxing.model.Transaksi;
 import com.investree.sandboxing.repository.TransaksiRepository;
 import com.investree.sandboxing.view.TransaksiService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -24,6 +26,8 @@ public class TransaksiController {
     public TransaksiRepository transaksiRepository;
 
     // done
+    @Operation(summary = "Post Transaksi", description = "Create Transaksi")
+    @SecurityRequirement(name = "Bearer Authentication")
     @PostMapping("")
     public ResponseEntity<Map> save(@RequestBody Transaksi objModel) {
         Map save = transaksiService.save(objModel);
@@ -31,6 +35,8 @@ public class TransaksiController {
     }
 
     // done
+    @Operation(summary = "Put Transaksi", description = "Update Transaksi")
+    @SecurityRequirement(name = "Bearer Authentication")
     @PutMapping("")
     public ResponseEntity<Map> updateStatus(@RequestBody Transaksi objModel) {
         Map update = transaksiService.updateStatus(objModel);
@@ -38,6 +44,8 @@ public class TransaksiController {
     }
 
     // done
+    @Operation(summary = "Get Transaksi", description = "Get List Transaksi")
+    @SecurityRequirement(name = "Bearer Authentication")
     @GetMapping("/list")
     public ResponseEntity<Map> list(
             @RequestParam() Integer page,
