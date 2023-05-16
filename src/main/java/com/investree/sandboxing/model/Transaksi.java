@@ -28,10 +28,10 @@ public class Transaksi {
 
     @ManyToOne(targetEntity = User.class)
     @JoinColumn(name = "id_peminjam")
-    private User idPeminjam;
+    private User peminjam;
 
     @ManyToOne(targetEntity = User.class)
     @JoinColumn(name = "id_meminjam")
-    private User idMeminjam;
+    private User meminjam;
 
 }
