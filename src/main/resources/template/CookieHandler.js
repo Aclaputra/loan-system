@@ -8,16 +8,12 @@ getCookie = (name) => {
 
 deleteCookie = (name, path) => {
     // document.cookie = `sandwich=turkey; path=/; max-age=0;`;
-    document.cookie = `${name}; path=${path}`
+    document.cookie = `${name}; path=${path}; max-age=0`
 }
 
 console.log(getCookie("login"))
 console.log(document.cookie)
 
-// validation if login cookie exist after jwt access
-
-
-// deleteCookie("login", "/")
 
 
 
