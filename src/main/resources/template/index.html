@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Home Page</h1>
+
+    <!-- if logout button clicked then delete cookie -->
+    <button onclick="logout()">Logout</button>
+    <script src="./CookieHandler.js"></script>
+    <script>
+        if (getCookie("login")) {
+            console.log("Dapat Masuk")
+        } else window.location.replace("/login.html")
+
+        // logout function
+        logout = async () => {
+            window.alert("See you! You have been logged out.")
+            deleteCookie("login=cookie","/")
+            window.location.replace("/login.html")
+        }
+    </script>
+</body>
+</html>
