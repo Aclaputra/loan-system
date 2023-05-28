@@ -39,4 +39,9 @@ public class TestingController {
         assertEquals(HttpStatus.OK, exchange.getStatusCode());
         System.out.println("response =" + exchange.getBody());
     }
+
+    @Test
+    public void restTemplateList() throws Exception {
+
+    }
 }
