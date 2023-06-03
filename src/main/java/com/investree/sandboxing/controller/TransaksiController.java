@@ -25,6 +25,12 @@ public class TransaksiController {
     @Autowired
     public TransaksiRepository transaksiRepository;
 
+    public TransaksiController(TransaksiService transaksiService, TransaksiRepository transaksiRepository) {
+        super();
+        this.transaksiService = transaksiService;
+        this.transaksiRepository = transaksiRepository;
+    }
+
     // done
     @Operation(summary = "Post Transaksi", description = "Create Transaksi")
     @SecurityRequirement(name = "Bearer Authentication")
